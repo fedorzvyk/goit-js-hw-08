@@ -7,7 +7,7 @@ const formData = {};
 formRef.addEventListener('submit', onFormSubmit);
 formRef.addEventListener('input', throttle(onFormInput, 500));
 
-populateTextarea();
+populateForm();
 
 function onFormSubmit(evt) {
   evt.preventDefault();
@@ -24,7 +24,7 @@ function onFormInput(evt) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
-function populateTextarea() {
+function populateForm() {
   const savedMessage = localStorage.getItem(STORAGE_KEY);
   const parsedMessage = JSON.parse(savedMessage);
   if (savedMessage) {
